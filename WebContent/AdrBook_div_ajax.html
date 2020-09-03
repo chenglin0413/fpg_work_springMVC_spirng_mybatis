@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<!--Import the internal css file -->
+    <link rel="stylesheet" href="resources/css/style.css" />
+
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/solid.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/regular.js"></script>
+    <!-- Select the required icon type to load -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/fontawesome.js"></script>
+	<!--Import external js files-->
+    <!-- include BlockUI -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="http://malsup.github.io/jquery.blockUI.js"></script>
+
+    <!--Introduce the internal js file-->
+    <script type="text/javascript" src="resources/js/tools.js" ></script>
+    <script type="text/javascript" src="resources/js/param.js" ></script>
+    <script type="text/javascript" src="resources/js/attribute_getter.js" ></script>
+    <script type="text/javascript" src="resources/js/attribute_setter.js" ></script>
+    <script type="text/javascript" src="resources/js/drag_drop.js" ></script>
+    <script type="text/javascript" src="resources/js/flow.js" ></script>
+    <script type="text/javascript" src="resources/js/ajax_crud.js" ></script>
+
+
+
+
+
+</head>
+
+<body>
+    <div>
+        <h2 style="text-align:center"> AdrBook_div_ajax</h2>
+    </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"></script>
+        <button id="add-btn" class="addressbook-table-btn"><i class="fas fa-plus-square"></i></button>
+        <button id="del-check-btn" class="addressbook-table-btn"><i class="fas fa-user-times"></i></button>
+        <BR>
+        <div class="addressbook-table">
+            <div class="thead">
+                <div class="tr">
+                    <div  class="th"><input type="checkbox" class="checkbox_all" /><br><span>select all</span></div>
+                    <div  class="th">No(編號)</div>
+                    <div  class="th">Name(姓名)</div>
+                    <div  class="th">tel(電話)</div>
+                    <div  class="th">gender(性別)</div>
+                    <div  class="th">type(類型)</div>
+                    <div  class="th">notes(備註)</div>
+                    <div  class="th">function(功能)</div>
+                    <div  class="th">Update Date(更新時間)</div>
+                </div>
+            </div>
+            <div class="tbody">
+            </div>
+        </div>
+<!--樣板-->
+<span id="temp" style="display: none">
+<div id="div-tr-temp" class="tr"  >
+
+        <div id="checkbox" class="td">
+            <div class="checkbox">
+                <div id="_id" ><div class="text" style="display: none;" ></div></div>
+                <input class="rd" type="checkbox"/>
+            </div>
+        </div>
+        <div id="no" class="td"><div class="text rd" style="display: none;"></div><input class="ed" type="text"></div>
+        <div id="name" class="td"><div class="text rd"></div><input class="ed" type="text"></div>
+        <div id="tel" class="td"><div class="text rd"></div><input class="ed" type="text"></div>
+        <div id="gender" class="td"><div class="text rd"></div>
+            <input class="ed" type="radio" name="gender" value="male" checked="checked"><div class="inner_text ed">男性</div>
+            <input class="ed" type="radio" name="gender" value="female"><div class="inner_text ed">女性</div>
+        </div>
+        <div id="type" class="td"><div class="text rd"></div>
+            <div class="selectIndex " style="display: none;"></div>
+            <select class="ed">
+                <option>同學</option>
+                <option>家庭</option>
+                <option>工作夥伴</option>
+            </select>
+        </div>
+        <div id="notes" class="td"><div class="text rd"></div><textarea class="ed"></textarea></div>
+        <div id="function" class="td">
+            <button id="save-btn" class="save-btn ed"><i class="fas fa-save"></i></button>
+            <button id="cancel-btn" class="cancel-btn ed"><i class="fas fa-window-close"></i></button>
+            <button id="edit-btn" class="edit-btn rd" style="display: none;"><i class="fas fa-pen-square"></i></button>
+            <button id="del-btn" class="del-btn rd" style="display: none;"><i class="far fa-trash-alt"></i></button>
+        </div>
+        <div id="timestamp" class="td"><div class="text rd" style="display: none;"></div></div>
+</div>
+</span>
+<!--  <button id="test" class="test"><i class="far fa-trash-alt"></i></button> -->
+</body>
+<script>
+//String.prototype.replaceAll = function(s1,s2){
+//    return this.replace(new RegExp(s1,"gm"), s2);
+//}
+
+    $(document).ready(function(){
+    	init();
+    });
+
+</script>
+</html>

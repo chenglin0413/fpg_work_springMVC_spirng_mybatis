@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.adrbook.spring.model.AdrbookDaoIMP">
+		<select id="getAll"  resultType="com.adrbook.spring.model.AdrbookVO">
+			SELECT *  FROM ADRBOOK order by xuid
+		</select>
+		<insert id="insert" parameterType="com.adrbook.spring.model.AdrbookVO"  flushCache="true">
+			 <selectKey resultType="java.lang.String" keyProperty="xuid" order="BEFORE">
+			   	SELECT ADRBOOK_SEQ.nextval FROM dual
+			  </selectKey>
+			INSERT INTO ADRBOOK(XUID,NAME,TEL,GENDER,TYPE,TYPE_INDEX,NOTES,TIMESTAMP,IP,BROW_VER)
+			VALUES(
+				#{xuid,jdbcType=VARCHAR},
+				#{name,jdbcType=VARCHAR},
+				#{tel,jdbcType=VARCHAR},
+				#{gender,jdbcType=VARCHAR},
+				#{type,jdbcType=VARCHAR},
+				#{type_index},
+				#{notes,jdbcType=VARCHAR},
+				sysdate,
+				#{ip,jdbcType=VARCHAR},
+				#{brow_ver,jdbcType=VARCHAR}
+			)
+		</insert>
+		<update id="update" parameterType="com.adrbook.spring.model.AdrbookVO" >
+			UPDATE ADRBOOK SET NAME=#{name},TEL=#{tel},GENDER=#{gender},TYPE=#{type},TYPE_INDEX=#{type_index},NOTES=#{notes},IP=#{ip},BROW_VER=#{brow_ver},TIMESTAMP=sysdate WHERE XUID=#{xuid}
+		</update>
+		<delete id="delete" parameterType="java.lang.String">
+			DELETE from ADRBOOK WHERE  XUID=#{XUID}
+		</delete>
+	</mapper>

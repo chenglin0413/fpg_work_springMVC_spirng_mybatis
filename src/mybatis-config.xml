@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--
+         指明在adrbook這個表中所包含常用sql方法，com/adrbook/spring/model/AdrbookDaoIMP.xml
+         是一個指明java方法和sql語法聯絡的xml檔案
+    -->
+	<mappers>
+	    <mapper resource="com/adrbook/spring/model/AdrbookDaoIMP.xml"/><!--mapper對應的xml配置檔案-->
+	</mappers>
+</configuration>

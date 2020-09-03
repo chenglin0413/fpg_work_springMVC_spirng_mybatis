@@ -1,0 +1,51 @@
+   body{
+            margin-left: 10px;
+            position:absolute;
+            height:100%;
+            width:100%;
+        }
+        .addressbook-table-btn {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius:20%;
+            margin-bottom: 4px;
+        }
+        .addressbook-table {
+            display: table;
+
+        }
+
+        .addressbook-table .thead {
+            display: table-header-group;
+            font-family:monospace;
+
+        }
+
+        .addressbook-table .tbody {
+            display: table-row-group;
+            font-family:monospace;
+
+        }
+
+        .addressbook-table .tr {
+            display: table-row-group;
+            width: 165px;
+        }
+
+        .addressbook-table .th,
+        .addressbook-table .td {
+            text-align:center;
+            width: 153px;
+            border: 0.1px solid navy;
+            /*padding: 0.1px;*/
+            display: table-cell;
+
+        }
+        .addressbook-table .tbody button{
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius:20%;
+            margin-bottom: 4px;
+        }
